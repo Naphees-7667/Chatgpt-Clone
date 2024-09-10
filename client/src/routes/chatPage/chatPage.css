@@ -1,0 +1,90 @@
+/* .chatPage{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  .wrapper{
+    flex:1;
+    overflow: scroll;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .chat{
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      p,li{
+        margin: 10px 0px;
+      }
+
+      .message{
+        padding: 20px;
+
+        &.user{
+          background-color: #2c2937;
+          border-radius: 20px;
+          max-width: 80%;
+          align-self: flex-end;
+        }
+      }
+    }
+  }
+} */
+
+.chatPage {
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.wrapper {
+  flex: 1; /* Allows wrapper to take available space */
+  width: 100%; /* Full width */
+  display: flex;
+  justify-content: center;
+  overflow: auto; /* Scrolls only if content overflows */
+}
+
+.chat {
+  width: 100%; /* Full width of the wrapper */
+  max-width: 800px; /* Maximum width to ensure readability */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px; /* Adds padding inside the chat container */
+
+  p, li {
+    margin: 10px 0; /* Margin for paragraphs and list items */
+  }
+
+  .message {
+    padding: 20px;
+    border-radius: 20px;
+
+    &.user {
+      background-color: #2c2937;
+      max-width: 80%; /* Limits message bubble width */
+      align-self: flex-end; /* Aligns user messages to the end */
+    }
+  }
+}
+
+/* Media query for responsive design */
+@media (max-width: 768px) {
+  .chat {
+    width: 100%; /* Full width on smaller screens */
+    max-width: none; /* Remove maximum width constraint */
+  }
+
+  .newForm {
+    width: 100%; /* Full width on smaller screens */
+    max-width: none; /* Remove maximum width constraint */
+  }
+}
